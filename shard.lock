@@ -1,0 +1,5 @@
+version: 1.0
+shards:
+  fast_irc:
+    github: RX14/fast_irc.cr
+    version: 0.2.2

@@ -1,0 +1,11 @@
+name: ircbot
+version: 0.1.0
+
+authors:
+  - Max Gurela <maxpowa1@gmail.com>
+
+dependencies:
+  fast_irc:
+    github: RX14/fast_irc.cr
+
+license: MIT
