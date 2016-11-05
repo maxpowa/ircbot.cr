@@ -5,7 +5,7 @@ authors:
   - Max Gurela <max.gurela@outlook.com>
 
 dependencies:
-  fast_irc:
-    github: RX14/fast_irc.cr
+  ircbot:
+    path: ..
 
 license: MIT

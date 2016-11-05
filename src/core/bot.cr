@@ -1,6 +1,5 @@
 # This file is part of ircbot.cr
 # Copyright (C) 2016 Max Gurela <max.gurela@outlook.com>
-# Original Copyright (C) 2016 Oleh Prypin <oleh@pryp.in>
 # Released under the terms of the MIT license (see LICENSE).
 
 require "./options"
@@ -61,8 +60,8 @@ module IRCBot
       @modules.push(mod)
     end
 
-    def self.write(value)
-      INSTANCE.@chat.not_nil!.write(value)
+    macro method_missing(call)
+      INSTANCE.@chat.not_nil!.{{call}}
     end
   end
 end
