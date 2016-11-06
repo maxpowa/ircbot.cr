@@ -7,13 +7,11 @@ require "fast_irc"
 require "socket"
 require "openssl"
 
-alias Pipe = Channel::Unbuffered
-
 module IRCBot
   class IRCConnection
     @socket : TCPSocket | OpenSSL::SSL::Socket::Client | Nil
     @orig_socket : TCPSocket | Nil
-    @pipe = Pipe(FastIRC::Message).new
+    @pipe = Channel::Unbuffered(FastIRC::Message).new
 
     def initialize(@options : ChatOptions)
       # nop

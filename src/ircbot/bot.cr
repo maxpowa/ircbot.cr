@@ -27,6 +27,7 @@ module IRCBot
   class Bot
     INSTANCE = new
     @modules = [] of IRCBot::Handler
+    property! chat : IRCBot::IRC
 
     def self.instance
       INSTANCE
@@ -41,11 +42,11 @@ module IRCBot
     end
 
     def start(options)
-      @chat = IRCBot::IRC.new(options)
+      chat = IRCBot::IRC.new(options)
 
       spawn do
         # When we receive a message
-        @chat.not_nil!.run do |msg|
+        chat.run do |msg|
           # Async modules so we don't end up being slow
           @modules.each do |mod|
             spawn do
@@ -61,7 +62,7 @@ module IRCBot
     end
 
     macro method_missing(call)
-      INSTANCE.@chat.not_nil!.{{call}}
+      chat.{{call}}
     end
   end
 end
