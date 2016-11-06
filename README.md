@@ -2,7 +2,7 @@
 
 IRC Bot library written in crystal, using fast_irc.cr for message parsing
 
-## [Docs](http://crystal-docs.org/maxpowa/ircbot.cr)
+[![crystal-docs.org](https://crystal-docs.org/badge.svg)](https://crystal-docs.org/maxpowa/ircbot.cr)
 
 ## Installation
 
