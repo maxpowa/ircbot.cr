@@ -5,6 +5,6 @@ shards:
     version: 0.2.2
 
   ircbot:
-    path: ..
-    version: 0.1.0
+    github: maxpowa/ircbot.cr
+    commit: 1e6dabbc8a675a62f59e26fe3bc9be4e3f22c285
 

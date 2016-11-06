@@ -1,4 +1,4 @@
-name: ircbot
+name: echobot
 version: 0.1.0
 
 authors:
@@ -6,6 +6,6 @@ authors:
 
 dependencies:
   ircbot:
-    path: ..
+    github: maxpowa/ircbot.cr
 
 license: MIT
