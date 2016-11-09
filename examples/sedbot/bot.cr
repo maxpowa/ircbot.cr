@@ -10,7 +10,7 @@ class SedModule < IRCBot::Handler
   def on_privmsg(message)
     key = message.prefix.target
     if cache[key]?
-      cache[key].push(message)
+      cache[key].insert(0, message)
       if cache[key].size > 10
         cache[key].pop
       end
@@ -69,7 +69,7 @@ class SedModule < IRCBot::Handler
   end
 end
 
-IRCBot::Bot.start(IRCBot::ChatOptions.new(ARGV))
+IRCBot::Bot.start(IRCBot::CoreOptions.new(ARGV))
 
 # Run the bot forever
 sleep

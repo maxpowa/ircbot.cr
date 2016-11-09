@@ -5,7 +5,7 @@
 require "ircbot"
 require "./modules/**"
 
-IRCBot::Bot.start(IRCBot::ChatOptions.new(ARGV))
+IRCBot::Bot.start(IRCBot::CoreOptions.new(ARGV))
 
 # Run the bot forever
 sleep
