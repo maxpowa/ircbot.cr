@@ -6,5 +6,5 @@ shards:
 
   ircbot:
     github: maxpowa/ircbot.cr
-    commit: 1e6dabbc8a675a62f59e26fe3bc9be4e3f22c285
+    commit: 6f6df523191badb5999f5ae1d202e2c7dfa6aa0d
 
