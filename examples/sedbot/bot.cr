@@ -11,7 +11,7 @@ class SedModule < IRCBot::Handler
     key = message.prefix.target
     if cache[key]?
       cache[key].insert(0, message)
-      if cache[key].size > 10
+      if cache[key].size > 15
         cache[key].pop
       end
     else
@@ -55,7 +55,7 @@ class SedModule < IRCBot::Handler
         return
       end
       re = Regex.new(sed_input[2])
-      cache.fetch(key).map! do |cache_message|
+      cache.fetch(key).reverse.map! do |cache_message|
         if re.match(cache_message.params[-1])
           cache_message.params[-1] = cache_message.params[-1].gsub(re, sed_input[3])
           IRCBot::Bot.instance.write("PRIVMSG #{message.params[0]} :\u{2}#{key}\u{02} meant to say: #{cache_message.params[-1]}")
