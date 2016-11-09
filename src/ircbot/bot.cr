@@ -7,7 +7,7 @@ require "./module"
 require "./irc"
 
 module IRCBot
-  class ChatOptions < Options
+  class CoreOptions < Options
     string host = "irc.esper.net"
     int port = 6667
     bool ssl = false

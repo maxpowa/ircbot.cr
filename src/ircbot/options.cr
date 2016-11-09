@@ -9,7 +9,7 @@ module IRCBot
       {% begin %}
         argv.each do |s|
           if !s.includes? '='
-            raise "Options must be specified like 'name=value', not '#{s}'"
+            raise "Command line options must be specified like 'name=value', not '#{s}'"
           end
           name, value = s.split('=', 2)
           name = name.downcase.sub(/^-+/, "").gsub('-', '_')

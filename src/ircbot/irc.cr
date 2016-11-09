@@ -13,7 +13,7 @@ module IRCBot
     @orig_socket : TCPSocket | Nil
     @pipe = Channel::Unbuffered(FastIRC::Message).new
 
-    def initialize(@options : ChatOptions)
+    def initialize(@options : CoreOptions)
       # nop
     end
 
@@ -108,7 +108,7 @@ module IRCBot
     @@connections = {} of {String, String} => IRCConnection
     @connection : IRCConnection
 
-    def initialize(@options : ChatOptions)
+    def initialize(@options : CoreOptions)
       @connection = @@connections.fetch({host, nick}) {
         @@connections[{host.as(String), nick.as(String)}] = conn = IRCConnection.new(@options)
         spawn { conn.run }
