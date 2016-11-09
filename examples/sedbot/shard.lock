@@ -1,0 +1,9 @@
+version: 1.0
+shards:
+  fast_irc:
+    github: RX14/fast_irc.cr
+    version: 0.2.2
+
+  ircbot:
+    github: maxpowa/ircbot.cr
+    commit: 6f6df523191badb5999f5ae1d202e2c7dfa6aa0d
