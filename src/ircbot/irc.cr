@@ -60,14 +60,10 @@ module IRCBot
       loop do
         begin
           connect
-          loop do
+          FastIRC.parse(@socket.not_nil!) do |msg|
             begin
-              line = @socket.not_nil!.gets
-              raise "Disconnected" if !line || line.empty?
               timeout = false
-              line = line.not_nil!.strip
-              puts "<< #{line}"
-              msg = FastIRC::Message.parse line
+              puts "<< #{msg.to_s}"
 
               case msg.command
               when "PING"
@@ -94,6 +90,7 @@ module IRCBot
               timeout = true
             end
           end
+          raise "Disconnected"
         rescue e
           puts "#{e.class}: #{e.message}"
           @socket.try &.close

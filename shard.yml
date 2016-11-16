@@ -7,5 +7,6 @@ authors:
 dependencies:
   fast_irc:
     github: RX14/fast_irc.cr
+    commit: 0a9c044
 
 license: MIT

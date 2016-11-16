@@ -2,4 +2,5 @@ version: 1.0
 shards:
   fast_irc:
     github: RX14/fast_irc.cr
-    version: 0.2.2
+    commit: 0a9c0446a552239eb373832c0bc7bd29df1b71d7
+
