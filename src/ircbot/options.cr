@@ -5,7 +5,7 @@
 
 module IRCBot
   abstract class Options
-    macro def initialize(argv = ARGV)
+    def initialize(argv = ARGV)
       {% begin %}
         argv.each do |s|
           if !s.includes? '='

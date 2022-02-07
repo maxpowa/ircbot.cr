@@ -11,7 +11,7 @@ module IRCBot
   class IRCConnection
     @socket : TCPSocket | OpenSSL::SSL::Socket::Client | Nil
     @orig_socket : TCPSocket | Nil
-    @pipe = Channel::Unbuffered(FastIRC::Message).new
+    @pipe = Channel(FastIRC::Message).new
 
     def initialize(@options : CoreOptions)
       # nop
@@ -83,7 +83,7 @@ module IRCBot
               wait_time = {wait_time / 2, 2.0}.max
             rescue e : InvalidByteSequenceError
               puts "#{e.class}: #{e.message}"
-            rescue e : IO::Timeout
+            rescue e : IO::TimeoutError
               puts "#{e.class}: #{e.message}"
               write "PING :#{hostname}"
               raise e if timeout
