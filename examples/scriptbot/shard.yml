@@ -1,0 +1,11 @@
+name: scriptbot
+version: 0.1.0
+
+authors:
+  - Max Gurela <max.gurela@outlook.com>
+
+dependencies:
+  ircbot:
+    github: maxpowa/ircbot.cr
+
+license: MIT
