@@ -27,7 +27,8 @@ module IRCBot
   class Bot
     INSTANCE = new
     @modules = [] of IRCBot::Handler
-    #property! chat : IRCBot::IRC
+
+    # property! chat : IRCBot::IRC
 
     def self.instance
       INSTANCE

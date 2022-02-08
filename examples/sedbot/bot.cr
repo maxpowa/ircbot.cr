@@ -15,7 +15,7 @@ class SedModule < IRCBot::Handler
         cache[key].pop
       end
     else
-      cache[key] = [ message ]
+      cache[key] = [message]
     end
 
     check_match(message)

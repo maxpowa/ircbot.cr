@@ -1,5 +1,6 @@
-doc/
-libs/
-.crystal/
-.shards/
-/ircbot
+### Crystal ###
+/docs/
+/lib/
+/bin/
+/.shards/
+*.dwarf

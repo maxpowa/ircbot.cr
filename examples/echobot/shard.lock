@@ -1,10 +1,10 @@
-version: 1.0
+version: 2.0
 shards:
   fast_irc:
-    github: RX14/fast_irc.cr
-    version: 0.2.2
+    git: https://github.com/rx14/fast_irc.cr.git
+    version: 0.3.4+git.commit.9c295655b1e9a52f6fd2539e788058cfdaef913f
 
   ircbot:
-    github: maxpowa/ircbot.cr
-    commit: 22e038a8d9d83f1012b164c347ba586079784c2a
+    git: https://github.com/maxpowa/ircbot.cr.git
+    version: 0.1.0+git.commit.afc9fa4bf49006f2afa3c32f1d32e376246c1e72
 

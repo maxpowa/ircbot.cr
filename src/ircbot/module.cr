@@ -5,14 +5,12 @@
 require "./bot"
 
 module IRCBot
-
   # Abstract handler class, should be extended by modules.
   # Extending this class will automatically register the module with the bot instance.
   #
   # In your module, you can define multiple `on_` methods to handle different commands.
   # For example, to capture privmsg events you would put `on_privmsg(message)` in your module class.
   abstract class Handler
-
     macro method_missing(call)
       {{call}} # nop (for some reason method_missing needs this otherwise it doesn't do anything)
     end
